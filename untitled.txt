@@ -1,0 +1,34 @@
+
+select
+	aa.*,
+	bb.*
+from 
+	(select
+		1 		as	`id`,
+		null	as	`name`
+	union all
+	select
+		2 		as	`id`,
+		null	as	`name`
+	union all 
+	select
+		3		as	`id`,
+		103		as	`name`
+	) aa 
+left outer join 
+	(select
+		1		as	`id`,
+		null	as	`name`
+	union all
+	select
+		2		as	`id`,
+		null	as	`name`
+	union all
+	select
+		3		as	`id`,
+		103		as	`name`
+	)bb
+on aa.id = bb.id and aa.name = bb.name
+
+
+
